@@ -1,9 +1,6 @@
-import dash
-import dash_core_components as dcc
-import dash_html_components as html
+from dash import dash, html, dcc
 from dash.dependencies import Input, Output
 
-# external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app = dash.Dash(__name__)
 
@@ -20,5 +17,5 @@ application = app.server
 
 app.layout = html.Div([])
 
-if __name__ == '__main__':
-    app.run_server(debug=True, port=8080, host='0.0.0.0') #nosec
+if __name__ == "__main__":
+    app.run_server(debug=True, port=8080, host="0.0.0.0")  # nosec
