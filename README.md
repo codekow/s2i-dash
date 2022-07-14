@@ -14,6 +14,19 @@ Open an issue or PR if the explanations below are inadequate, and we can help ge
 4. Enter the app name and the URL for the app's repository (from step #1),
 5. Click 'Create'
 
+## Local development
+
+```
+python -m venv venv
+. ./venv/bin/activate
+
+pip install -U pip
+pip install -r requirements.txt
+
+python wsgi.py
+```
+Access via http://localhost:8080/
+
 ## WSGI / gunicorn
 
 This sample Python application relies on the support provided by the default S2I builder for deploying a WSGI application using the ``gunicorn`` WSGI server. The requirements which need to be satisfied for this to work are:
@@ -65,3 +78,4 @@ When s2i builds the container, it will look into `.s2i` for additional instructi
 
 ## Links
 - [Python s2i examples](https://github.com/sclorg/s2i-python-container/tree/master/examples)
+- [Dash (Plotly)](https://dash.plotly.com/)
