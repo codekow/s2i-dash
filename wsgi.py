@@ -11,12 +11,12 @@ app = dash.Dash(__name__)
 # https://docs.openshift.com/container-platform/3.11/using_images/s2i_images/python.html#using-images-python-configuration
 application = app.server
 
-from flask import request
-@application.before_request
-def print_header():
-    print('============== START HEADERS ==============')
-    print(request.headers)
-    print('=============== END HEADERS ===============')
+# from flask import request
+# @application.before_request
+# def print_header():
+#     print('============== START HEADERS ==============')
+#     print(request.headers)
+#     print('=============== END HEADERS ===============')
 
 app.layout = html.Div([])
 
