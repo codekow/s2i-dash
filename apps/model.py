@@ -12,10 +12,6 @@ If there is more than one graph,
 create more 'graph.py'-type files, each being able to take an input and produce a chart.
 '''
 
-import numpy as np
 import pandas as pd
 
-def gen_data(numdots):
-    df = pd.DataFrame(np.random.randint(0, 100, size=(numdots, 2)), columns=list('XY'))
-    print(df)
-    return df
+df = pd.read_csv('https://raw.githubusercontent.com/plotly/datasets/master/gapminderDataFiveYear.csv')
