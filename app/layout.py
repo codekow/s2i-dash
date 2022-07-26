@@ -1,13 +1,13 @@
 # used to display only
-from operator import mod
 from dash import dash, dcc, html
 
 # used for interactive callbacks
 from dash import Input, Output
 
 # pull in data to display
-from apps import model
+from app import model
 
+# TODO return df instead of reference obj
 df = model.df
 
 import plotly.express as px

@@ -1,5 +1,5 @@
 # import app elements
-from apps import layout
+from app import layout
 
 app = layout.app
 
