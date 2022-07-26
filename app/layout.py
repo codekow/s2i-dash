@@ -1,3 +1,11 @@
+'''
+This is an example file which takes as an input the output of the data scientist's model.
+
+This might be a csv, array, dataframe, or whatever
+
+It should return a plotly layout object, which is consumed (wsgi.py)
+'''
+
 # used to display only
 from dash import dash, dcc, html
 
