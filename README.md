@@ -49,9 +49,9 @@ This repo contains an example dash application that can be deployed to OpenShift
 
     - `wsgi.py`;  main application, to be run by gunicorn
 
-    - `model.py`;  an optional file, to demonstrate how to modularize code
+    - `app/model.py`;  an optional file, to demonstrate how to modularize code
 
-    - `graph.py`;  an optional file, to demonstrate how to modularize code
+    - `app/layout.py`;  an optional file, to demonstrate how to modularize code
 
 2. The S2I environment variables. Used to setup additional environment varibles (ex: setup packages using a Nexus repository)
 
@@ -71,7 +71,7 @@ This repo contains an example dash application that can be deployed to OpenShift
 
 The file `wsgi.py` contains the instructions for python to run Dash. 
 
-It relies on `model.py` to run calculations on some data, and on `graph.py` to return a plotly figure that can be shown by the application. 
+It relies on `app/model.py` to run calculations on some data, and on `app/layout.py` to return a plotly figure that can be shown by the application. 
 
 When s2i builds the container, it will look into `.s2i` for additional instructions, including environment variables for installing packages with `pip`.
 
