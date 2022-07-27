@@ -3,7 +3,7 @@
 # gunicorn config
 # https://github.com/sclorg/s2i-python-container/tree/master/3.8#environment-variables
 
-APP_CONFIG=config.py
+#APP_CONFIG=config.py
 
 # uncomment below to run application w/o gunicorn
 #APP_FILE=wsgi.py
