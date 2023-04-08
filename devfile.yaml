@@ -1,0 +1,49 @@
+schemaVersion: 2.1.0
+metadata:
+  name: s2i-dash
+components:
+  - name: tools
+    attributes:
+      che-code.eclipse.org/contribute-endpoint/default-s2i: 8080
+    container:
+      image: quay.io/devfile/universal-developer-image:ubi8-latest
+      volumeMounts:
+        - name: venv
+          path: /home/user/.venv
+      memoryLimit: 512Mi
+      mountSources: true
+      endpoints:
+        - attributes:
+            contributed-by: che-code.eclipse.org
+            discoverable: false
+            urlRewriteSupported: false
+          exposure: public
+          name: default-s2i
+          protocol: https
+          secure: false
+          targetPort: 8080
+
+  - name: venv
+    volume:
+      size: 1G
+
+commands:
+  - id: setup-application
+    exec:
+      label: "Setup Virtual Environment"
+      component: tools
+      workingDir: ${PROJECT_SOURCE}
+      commandLine: |
+        python -m venv venv
+        pip install -r requirements.txt
+        . venv venv
+      group:
+        kind: run
+  - id: run-application
+    exec:
+      label: "Run application"
+      component: tools
+      workingDir: ${PROJECT_SOURCE}
+      commandLine: "python3 wsgi.py"
+      group:
+        kind: run
