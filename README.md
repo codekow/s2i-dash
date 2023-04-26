@@ -16,6 +16,8 @@ Open an issue or PR if the explanations below are inadequate, and we can help ge
 
 ## Local development
 
+Run w/ python `_main_`
+
 ```
 python -m venv venv
 . ./venv/bin/activate
@@ -26,7 +28,7 @@ pip install -r requirements.txt
 python wsgi.py
 ```
 
-Run w/ gunicorn locally (s2i python container does this)
+Run w/ `gunicorn` locally (s2i python container does this)
 
 ```
 gunicorn wsgi:application -c config.py
