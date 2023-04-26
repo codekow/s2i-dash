@@ -25,6 +25,13 @@ pip install -r requirements.txt
 
 python wsgi.py
 ```
+
+Run w/ gunicorn locally (s2i python container does this)
+
+```
+gunicorn wsgi:application -c config.py
+```
+
 Access via http://localhost:8080/
 
 ## WSGI / gunicorn

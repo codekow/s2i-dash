@@ -17,6 +17,5 @@ application = app.server
 if __name__ == "__main__":
     app.run_server(debug=True, port=8080, host="0.0.0.0")  # nosec
 
-# run gunicorn manually
-# TODO: move to readme
-# gunicorn wsgi:application -b 0.0.0.0:8080
+# run gunicorn manually on localhost
+# gunicorn wsgi:application -b 127.0.0.1:8080
