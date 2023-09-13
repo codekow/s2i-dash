@@ -1,16 +1,16 @@
 #!/bin/bash
 
 run_null(){
-    echo "Usage: insert here"
-    echo ""
-    echo "This container does nothing by default."
-    echo "Ponder the universe with infinate sleep..."
+  echo "Usage: insert here"
+  echo ""
+  echo "This container does nothing by default."
+  echo "Ponder the universe with infinate sleep..."
 
-    sleep infinity
+  sleep infinity
 }
 
 run_default(){
-    ${STI_SCRIPTS_PATH}/run
+  ${STI_SCRIPTS_PATH}/run
 }
 
 run_default
