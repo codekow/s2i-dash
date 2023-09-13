@@ -18,3 +18,5 @@
 
 #PIP_INDEX=https://<userid>:<token>@nexus-repo.example.com/repository/pypi-proxy
 #PIP_INDEX_URL=https://<userid>:<token>@nexus-repo.example.com/repository/pypi-proxy/simple
+
+UPGRADE_PIP_TO_LATEST=true
