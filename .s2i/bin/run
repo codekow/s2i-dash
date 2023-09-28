@@ -18,12 +18,13 @@ run_s2i_default(){
 }
 
 run_s2i_override(){
-  # kludge - could change entrypoint
-  python custom.py || return
+  # want to do something custom before you start
+  echo "These messages brought to you by bash."
+  echo "Reticulating splines..."
+  echo "Fetching dataset..."
 }
 
 usage
-[ "${1}" == "-h" ] && exit 0
 
 run_s2i_override
 run_s2i_default
