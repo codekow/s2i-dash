@@ -19,9 +19,12 @@ run_s2i_default(){
 
 run_s2i_override(){
   # want to do something custom before you start
-  echo "These messages brought to you by bash."
-  echo "Reticulating splines..."
-  echo "Fetching dataset..."
+  echo "
+  These messages brought to you by bash.
+  
+  Reticulating splines...
+  Fetching dataset...
+  "
 }
 
 usage
