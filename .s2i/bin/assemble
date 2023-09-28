@@ -2,7 +2,7 @@
 set -e
 
 usage(){
-  exec "${STI_SCRIPTS_PATH}/usage"
+  "${STI_SCRIPTS_PATH}/usage"
 }
 
 restore_artifacts(){
