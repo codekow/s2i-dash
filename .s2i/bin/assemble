@@ -6,9 +6,7 @@ usage(){
 }
 
 restore_artifacts(){
-  # Restore artifacts from the previous build (if they exist).
-  # We set them here just for show, but you will need to set this up with your logic
-  # according to the application directory that you chose.
+  # restore artifacts from a previous build (if they exist)
 
   if [ "$(ls /tmp/artifacts/ 2>/dev/null)" ]; then
     echo "---> Restoring build artifacts..."
@@ -17,7 +15,7 @@ restore_artifacts(){
 }
 
 assemble_s2i_override(){
-  # Install os based code dependencies here
+  # handle other dependencies here
   echo ""
 }
 
