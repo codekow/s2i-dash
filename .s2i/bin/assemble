@@ -16,7 +16,15 @@ restore_artifacts(){
 
 assemble_s2i_override(){
   # handle other dependencies here
-  echo ""
+  echo "
+  This process is runing as $(id)
+  Path: $(pwd)
+
+  Communicating via subspace...
+  Downloading dataset...
+  
+  Example: curl https://bulk.openweathermap.org/snapshot/{BULK_FILE_NAME}?appid={API key}
+  "
 }
 
 assemble_s2i_default(){
