@@ -2,8 +2,7 @@
 # set -e
 
 usage(){
-  # "${STI_SCRIPTS_PATH}/usage"
-  /tmp/usage
+  "${STI_SCRIPTS_PATH}/usage"
 }
 
 # fallback with sleep to debug your code
