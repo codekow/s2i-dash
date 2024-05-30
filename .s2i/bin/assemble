@@ -5,6 +5,21 @@ usage(){
   "${STI_SCRIPTS_PATH}/usage"
 }
 
+debug(){
+  echo "
+    This process is runing as $(id)
+    Path: $(pwd)
+  "
+}
+
+download_dataset(){
+  echo "
+    Embed an artifact inside your container for edge / disconnected use...
+    
+    Example: curl https://bulk.openweathermap.org/snapshot/{BULK_FILE_NAME}?appid={API key} > /data/weather.csv
+  "
+}
+
 restore_artifacts(){
   # restore artifacts from a previous build (if they exist)
 
@@ -16,15 +31,8 @@ restore_artifacts(){
 
 assemble_s2i_override(){
   # handle other dependencies here
-  echo "
-  This process is runing as $(id)
-  Path: $(pwd)
-
-  Communicating via subspace...
-  Downloading dataset...
-  
-  Example: curl https://bulk.openweathermap.org/snapshot/{BULK_FILE_NAME}?appid={API key}
-  "
+  debug
+  download_dataset
 }
 
 assemble_s2i_default(){
@@ -34,4 +42,5 @@ assemble_s2i_default(){
 
 usage
 assemble_s2i_override
+# restore_artifacts
 assemble_s2i_default

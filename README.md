@@ -1,4 +1,5 @@
 # Example Dash OpenShift / s2i Repo
+
 This is meant to be a good starting point for creating Dash applications that are deployed to OpenShift.
 
 Open an issue or PR if the explanations below are inadequate, and we can help get you up to speed! :thumbsup:
@@ -18,7 +19,7 @@ Open an issue or PR if the explanations below are inadequate, and we can help ge
 
 Setup virtual environment
 
-```
+```sh
 python -m venv venv
 . ./venv/bin/activate
 
@@ -28,7 +29,7 @@ pip install -r requirements.txt
 
 Run w/ python `_main_`
 
-```
+```sh
 python wsgi.py
 ```
 
@@ -36,25 +37,25 @@ OR
 
 Run w/ `gunicorn` (s2i python container does this)
 
-```
+```sh
 gunicorn wsgi:application -c config.py
 ```
 
-Access via http://localhost:8080/
+Access via <http://localhost:8080/>
 
 ## WSGI / gunicorn
 
 This sample Python application relies on the support provided by the default S2I builder for deploying a WSGI application using the ``gunicorn`` WSGI server. The requirements which need to be satisfied for this to work are:
 
-* The WSGI application code file needs to be named ``wsgi.py``.
-* The WSGI application entry point within the code file needs to be named ``application``.
-* The ``gunicorn`` package must be listed in the ``requirements.txt`` file for ``pip``.
+- The WSGI application code file needs to be named ``wsgi.py``.
+- The WSGI application entry point within the code file needs to be named ``application``.
+- The ``gunicorn`` package must be listed in the ``requirements.txt`` file for ``pip``.
 
 In addition, the ``.s2i/environment`` file has been created to allow environment variables to be set to override the behavior of the default S2I builder for Python.
 
-* The environment variable ``APP_CONFIG`` has been set to declare the name of the config file for ``gunicorn``.
+- The environment variable ``APP_CONFIG`` has been set to declare the name of the config file for ``gunicorn``.
 
-See https://github.com/OpenShiftDemos/os-sample-python
+See <https://github.com/OpenShiftDemos/os-sample-python>
 
 ## More information about this project
 
@@ -84,13 +85,13 @@ This repo contains an example dash application that can be deployed to OpenShift
 
 #### How it works
 
-The file `wsgi.py` contains the instructions for python to run Dash. 
+The file `wsgi.py` contains the instructions for python to run Dash.
 
-It relies on `app/model.py` to run calculations on some data, and on `app/layout.py` to return a plotly figure that can be shown by the application. 
+It relies on `app/model.py` to run calculations on some data, and on `app/layout.py` to return a plotly figure that can be shown by the application.
 
 When s2i builds the container, it will look into `.s2i` for additional instructions, including environment variables for installing packages with `pip`.
 
-
 ## Links
+
 - [Python s2i examples](https://github.com/sclorg/s2i-python-container/tree/master/examples)
 - [Dash (Plotly)](https://dash.plotly.com/)
